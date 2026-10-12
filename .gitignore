@@ -1,0 +1,12 @@
+# 개인 파일·결과물은 올리지 않는다
+인건비_서류.hwpx
+hong_gildong_signature.jpg
+results/
+
+# 도구 설정
+.claude/
+.impeccable/
+
+# 임시 파일
+_check*
+*.log

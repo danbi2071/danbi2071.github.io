@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 서류 깔끔정리</title>
+  <meta name="description" content="강의 정보 한 번만 입력하면 기관마다 다른 한글 양식에 알아서 채우고 서명까지 넣어 드려요.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/logo.webp" type="image/webp">
+  <link rel="apple-touch-icon" href="assets/logo.webp">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- 클립 모양 (여러 곳에서 재사용) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="clip" viewBox="0 0 24 64">
+      <path d="M8 58V12a4 4 0 0 1 8 0v40a7 7 0 0 1-14 0V10a10 10 0 0 1 20 0v38" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
+    </symbol>
+  </svg>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="logo" href="#top" aria-label="AI 서류 깔끔정리 홈">
+        <img class="logo-img" src="assets/logo.webp" alt="" width="36" height="36">
+        <span>서류 깔끔정리</span>
+      </a>
+      <nav class="nav" aria-label="주요 메뉴">
+        <a href="#demo">데모</a>
+        <a href="#how">사용법</a>
+        <a href="#tool">양식 채우기</a>
+        <a href="#minutes">회의록 정리</a>
+        <a href="#faq">자주 묻는 질문</a>
+      </nav>
+      <a class="btn btn-small" href="#tool">바로 쓰기</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- 1. 히어로 -->
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <h1>강의는 하셨으니,<br>서류는 저희가 채울게요.</h1>
+          <p class="lead">강사료 신청서, 강의 확인서, 출강 보고서처럼 기관마다 다른 한글 양식이라도 괜찮아요. 강의명·날짜·시간·내용을 <strong>한 번만</strong> 입력하면 칸마다 알아서 채우고, 서명란에는 서명 이미지까지 넣어 드려요.</p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#demo" data-play-demo>샘플 데모 보기</a>
+            <a class="btn btn-ghost" href="#tool">내 양식 채우기</a>
+          </div>
+          <ul class="hero-points">
+            <li>로그인 없이 바로</li>
+            <li>서명은 내 브라우저에만 저장</li>
+            <li>한글 .hwpx 양식 그대로</li>
+          </ul>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="sheet sheet-back"></div>
+          <div class="sheet sheet-mid"></div>
+          <div class="sheet sheet-front">
+            <svg class="clip"><use href="#clip"/></svg>
+            <div class="mini-title">강사료 지급 신청서</div>
+            <div class="mini-row"><span>교육명</span><i class="ink">생성형 AI 리터러시</i></div>
+            <div class="mini-row"><span>교육일자</span><i class="ink">2026. 10. 12.</i></div>
+            <div class="mini-row"><span>교육시간</span><i class="ink">14:00~16:00</i></div>
+            <div class="mini-row tall"><span>내용</span><i class="ink">프롬프트 작성 실습</i></div>
+            <div class="mini-sign"><span>서명</span><svg viewBox="0 0 120 40"><path d="M4 30 C14 4, 24 40, 36 18 S56 8, 64 24 S84 10, 96 20 S112 6, 116 12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></div>
+            <div class="stamp">완료</div>
+          </div>
+          <div class="sticky">한 번만 쓰면<br>끝이에요!</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. 데모 (Before / After) -->
+    <section class="section" id="demo">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">샘플 데모</p>
+          <h2>빈 양식이 이렇게 채워져요</h2>
+          <p>예시 강사료 지급 신청서로 보여 드릴게요. 실제 서비스에서도 같은 순서로 채워져요.</p>
+        </div>
+        <div class="demo">
+          <div class="demo-controls">
+            <div class="seg" role="tablist" aria-label="Before After 전환">
+              <button type="button" role="tab" aria-selected="true" data-demo-view="before">Before · 빈 양식</button>
+              <button type="button" role="tab" aria-selected="false" data-demo-view="after">After · 채운 양식</button>
+            </div>
+            <button type="button" class="btn btn-primary btn-small" id="demo-play">▶ 채우는 과정 보기</button>
+          </div>
+          <div class="demo-stage">
+            <aside class="demo-input card-note">
+              <h3>입력한 내용</h3>
+              <dl>
+                <dt>강의명</dt><dd>생성형 AI 리터러시 기초</dd>
+                <dt>날짜</dt><dd>2026. 10. 12.(월)</dd>
+                <dt>시간</dt><dd>14:00 ~ 16:00 (2시간)</dd>
+                <dt>내용</dt><dd>생성형 AI 이해, 프롬프트 작성 실습</dd>
+                <dt>강사명 · 소속</dt><dd>김강사 · 넥서스커리어</dd>
+                <dt>서명</dt><dd>서명 사진 1장</dd>
+              </dl>
+            </aside>
+            <div class="paper demo-paper" id="demo-paper">
+              <svg class="clip"><use href="#clip"/></svg>
+              <h3 class="paper-title">강사료 지급 신청서</h3>
+              <table class="form-table">
+                <tr><th>교육명</th><td colspan="3" data-demo="생성형 AI 리터러시 기초"></td></tr>
+                <tr><th>교육일자</th><td data-demo="2026. 10. 12.(월)"></td><th>교육시간</th><td data-demo="14:00 ~ 16:00 (2시간)"></td></tr>
+                <tr><th>강사명</th><td data-demo="김강사"></td><th>소속</th><td data-demo="넥서스커리어"></td></tr>
+                <tr class="tall"><th>주요 교육내용</th><td colspan="3" data-demo="생성형 AI 이해, 프롬프트 작성 실습"></td></tr>
+                <tr><th>연락처</th><td colspan="3" data-demo="010-1234-5678"></td></tr>
+              </table>
+              <p class="paper-line">위와 같이 강사료 지급을 신청합니다.</p>
+              <table class="form-table">
+                <tr><th>신청일</th><td data-demo="2026. 10. 12."></td><th>강사 서명</th><td class="seal-cell"><span class="demo-signer">김강사</span><span class="demo-sig" aria-hidden="true"><svg viewBox="0 0 120 40"><path pathLength="1" d="M4 30 C14 4, 24 40, 36 18 S56 8, 64 24 S84 10, 96 20 S112 6, 116 12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></span>(인)</td></tr>
+              </table>
+              <p class="paper-line center"><strong>○○교육센터장 귀하</strong></p>
+              <div class="stamp demo-stamp">작성 완료</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. 사용법 -->
+    <section class="section section-tint" id="how">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">사용법</p>
+          <h2>올리고, 확인하고, 받으면 끝</h2>
+        </div>
+        <ol class="steps">
+          <li class="folder">
+            <span class="folder-tab">1</span>
+            <h3>양식 올리기</h3>
+            <p>기관에서 받은 한글 양식(.hwpx)을 올려요. 강의 정보와 서명은 처음 한 번만 입력하면 다음부터는 기억해 둬요.</p>
+          </li>
+          <li class="folder">
+            <span class="folder-tab">2</span>
+            <h3>칸 확인하기</h3>
+            <p>'교육명', '과정명'처럼 이름이 달라도 알아서 칸을 찾아요. 헷갈리는 칸은 직접 골라 주세요.</p>
+          </li>
+          <li class="folder">
+            <span class="folder-tab">3</span>
+            <h3>받고 보내기</h3>
+            <p>채운 양식을 .hwpx로 받고, Gmail 쓰기 창을 열면 받는 사람 칸이 미리 채워져 있어요.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 4. 양식 채우기 도구 -->
+    <section class="section" id="tool">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">양식 채우기</p>
+          <h2>내 양식으로 해 보기</h2>
+          <p>양식 채우기와 서명 처리는 모두 이 브라우저 안에서 해요. [PDF로 받기]를 누를 때만 채운 서류가 PDF 변환 서버로 갔다가, 변환이 끝나면 바로 지워져요.</p>
+        </div>
+
+        <div class="tool">
+          <div class="tool-steps">
+            <!-- ① 양식 -->
+            <section class="card" aria-labelledby="t1">
+              <h3 id="t1"><span class="num">1</span>양식 올리기</h3>
+              <label class="drop" id="drop">
+                <input type="file" id="form-file" accept=".hwpx,.hwp" hidden>
+                <svg class="drop-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 14h12l4 4h16v22H8z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="M24 36V24m-5 5 5-5 5 5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span class="drop-main">한글 양식(.hwpx)을 끌어다 놓거나 <u>눌러서 고르기</u></span>
+                <span class="drop-sub" id="form-name">아직 올린 양식이 없어요</span>
+              </label>
+              <button type="button" class="link-btn" id="use-sample-form">샘플 양식으로 해 보기</button>
+              <div class="notice notice-warn" id="hwp-notice" hidden>
+                <strong>구형 한글 파일(.hwp)이에요.</strong> 한글에서 한 번만 다시 저장해 주세요.
+                <ol>
+                  <li>한글에서 양식 파일 열기</li>
+                  <li><b>파일 → 다른 이름으로 저장하기</b></li>
+                  <li>파일 형식에서 <b>한글 표준 문서 (*.hwpx)</b> 선택 후 저장</li>
+                  <li>저장한 .hwpx 파일을 여기에 올리기</li>
+                </ol>
+              </div>
+              <p class="notice notice-error" id="form-error" hidden></p>
+            </section>
+
+            <!-- ② 정보 -->
+            <section class="card" aria-labelledby="t2">
+              <h3 id="t2"><span class="num">2</span>강의 정보</h3>
+              <div class="fields">
+                <label class="field span-2">강의명<input type="text" id="f-title" placeholder="예) 생성형 AI 리터러시 기초"></label>
+                <label class="field">강의 날짜
+                  <span class="with-picker">
+                    <input type="text" id="f-date" placeholder="예) 2026. 10. 12.(월)">
+                    <input type="date" class="picker" data-target="f-date" aria-label="달력에서 날짜 고르기">
+                  </span>
+                </label>
+                <label class="field">강의 시간<input type="text" id="f-time" placeholder="예) 14:00 ~ 16:00 (2시간)"></label>
+                <label class="field span-2">강의 내용<textarea id="f-content" rows="3" placeholder="예) 생성형 AI 이해, 프롬프트 작성 실습"></textarea></label>
+              </div>
+              <details class="profile" open>
+                <summary>내 정보 <span class="muted">· 한 번 입력하면 기억해요</span></summary>
+                <div class="fields">
+                  <label class="field">강사명<input type="text" id="f-name" autocomplete="name"></label>
+                  <label class="field">소속<input type="text" id="f-org" autocomplete="organization"></label>
+                  <label class="field">연락처<input type="tel" id="f-phone" autocomplete="tel" placeholder="010-0000-0000"></label>
+                  <label class="field">이메일<input type="email" id="f-email" autocomplete="email"></label>
+                  <label class="field">작성일
+                    <span class="with-picker">
+                      <input type="text" id="f-writeDate">
+                      <input type="date" class="picker" data-target="f-writeDate" aria-label="달력에서 작성일 고르기">
+                    </span>
+                  </label>
+                </div>
+                <div class="fields sensitive">
+                  <p class="sensitive-note span-2">강사료 지급에 필요한 정보예요. 이 브라우저 안에서만 쓰고 서버로 보내지 않아요.</p>
+                  <label class="field">주민등록번호
+                    <span class="with-picker">
+                      <input type="text" id="f-rrn" class="masked" inputmode="numeric" autocomplete="off" spellcheck="false" maxlength="14" placeholder="000000-0000000">
+                      <button type="button" class="btn btn-small reveal" id="rrn-reveal" aria-pressed="false" aria-controls="f-rrn">보기</button>
+                    </span>
+                    <span class="field-hint" id="rrn-hint" hidden>숫자 13자리를 확인해 주세요.</span>
+                  </label>
+                  <label class="field">은행명
+                    <input type="text" id="f-bank" list="bank-list" autocomplete="off" placeholder="예) 국민은행">
+                    <datalist id="bank-list">
+                      <option value="KB국민은행"></option><option value="신한은행"></option><option value="우리은행"></option>
+                      <option value="하나은행"></option><option value="NH농협은행"></option><option value="IBK기업은행"></option>
+                      <option value="카카오뱅크"></option><option value="토스뱅크"></option><option value="케이뱅크"></option>
+                      <option value="SC제일은행"></option><option value="우체국"></option><option value="새마을금고"></option>
+                      <option value="신협"></option><option value="수협은행"></option><option value="iM뱅크"></option>
+                      <option value="부산은행"></option><option value="경남은행"></option><option value="광주은행"></option>
+                      <option value="전북은행"></option><option value="제주은행"></option>
+                    </datalist>
+                  </label>
+                  <label class="field span-2">계좌번호<input type="text" id="f-account" inputmode="numeric" autocomplete="off" spellcheck="false" placeholder="숫자와 - 만 입력"></label>
+                  <label class="check span-2"><input type="checkbox" id="remember-rrn"> 주민등록번호도 이 브라우저에 기억하기 <span class="muted small">(꺼 두면 매번 새로 입력해요)</span></label>
+                </div>
+              </details>
+              <label class="check"><input type="checkbox" id="remember" checked> 이 브라우저에 내 정보와 강의 정보 기억하기</label>
+            </section>
+
+            <!-- ③ 서명 -->
+            <section class="card" aria-labelledby="t3">
+              <h3 id="t3"><span class="num">3</span>서명</h3>
+              <div class="sig-saved" id="sig-saved" hidden>
+                <div class="sig-box"><span class="sig-ph" aria-hidden="true">✍️</span><img id="sig-saved-img" alt="저장된 서명"></div>
+                <div class="sig-saved-actions">
+                  <p class="muted">저장된 서명을 서명란에 넣어요.</p>
+                  <button type="button" class="link-btn" id="sig-change">다른 서명으로 바꾸기</button>
+                  <button type="button" class="link-btn danger" id="sig-delete">서명 지우기</button>
+                </div>
+              </div>
+              <div id="sig-new">
+                <label class="drop drop-small">
+                  <input type="file" id="sig-file" accept="image/*" hidden>
+                  <span class="drop-main">흰 종이에 한 서명을 찍은 사진 올리기</span>
+                  <span class="drop-sub">배경은 자동으로 지워져요</span>
+                </label>
+                <button type="button" class="link-btn" id="use-sample-sig">샘플 서명으로 해 보기</button>
+                <div class="sig-edit" id="sig-edit" hidden>
+                  <div class="sig-compare">
+                    <figure><div class="sig-box"><span class="sig-ph" aria-hidden="true">📷</span><img id="sig-orig" alt="올린 사진"></div><figcaption>올린 사진</figcaption></figure>
+                    <figure><div class="sig-box checker"><span class="sig-ph" aria-hidden="true">✍️</span><img id="sig-clean" alt="배경을 지운 서명"></div><figcaption>배경 지운 서명</figcaption></figure>
+                  </div>
+                  <label class="field">배경 지우는 정도 <input type="range" id="sig-strength" min="0" max="100" value="50"></label>
+                  <button type="button" class="btn btn-small" id="sig-save">이 서명 쓰기</button>
+                </div>
+                <p class="notice notice-error" id="sig-error" hidden></p>
+              </div>
+              <label class="check"><input type="checkbox" id="sig-with-name" checked> 서명란에 강사명도 함께 넣기 <span class="muted small">(예: 홍길동 [서명] (인))</span></label>
+            </section>
+
+            <!-- ④ 칸 확인 -->
+            <section class="card" aria-labelledby="t4">
+              <h3 id="t4"><span class="num">4</span>칸 확인</h3>
+              <p class="muted" id="slots-empty">양식을 올리면 찾은 칸이 여기에 나와요.</p>
+              <ul class="slots" id="slots"></ul>
+              <p class="muted small" id="slots-missing" hidden></p>
+            </section>
+
+            <!-- ⑤ 받기·보내기 -->
+            <section class="card" aria-labelledby="t5">
+              <h3 id="t5"><span class="num">5</span>받기 · 보내기</h3>
+              <div class="actions">
+                <button type="button" class="btn btn-primary" id="download" disabled>채운 양식 받기 (.hwpx)</button>
+                <button type="button" class="btn btn-ghost" id="download-pdf" disabled>PDF로 받기</button>
+              </div>
+              <p class="muted small pdf-status" id="pdf-status">PDF 변환 서버를 확인하는 중…</p>
+              <details class="guide" id="pdf-guide">
+                <summary>PDF 모양이 원본과 다르거나, 변환 서버가 꺼져 있나요? 한글에서 PDF로 저장하는 방법</summary>
+                <ol>
+                  <li>위에서 받은 .hwpx 파일을 한글에서 열기</li>
+                  <li><b>파일 → PDF로 저장하기</b> (또는 인쇄 → 프린터에서 'Hancom PDF' 선택)</li>
+                  <li>저장한 PDF를 메일에 첨부하기</li>
+                </ol>
+                <p class="muted small">한글이 설치된 PC의 변환 서버는 한글로 직접 PDF를 만들어 원본과 같아요. Docker 변환 서버(LibreOffice)는 글꼴·줄 간격이 조금 다를 수 있어요.</p>
+              </details>
+
+              <div class="mail">
+                <h4>Gmail로 보내기</h4>
+                <div class="chips" id="email-chips" role="listbox" aria-label="저장된 받는 사람"></div>
+                <form class="add-email" id="add-email">
+                  <input type="text" id="new-email-name" placeholder="기관 이름 (선택)" aria-label="기관 이름">
+                  <input type="email" id="new-email" placeholder="받는 사람 이메일" aria-label="받는 사람 이메일" required>
+                  <button type="submit" class="btn btn-small">추가</button>
+                </form>
+                <label class="field">제목<input type="text" id="mail-subject"></label>
+                <label class="field">본문<textarea id="mail-body" rows="5"></textarea></label>
+                <button type="button" class="btn btn-primary" id="open-gmail" disabled>Gmail 쓰기 창 열기</button>
+                <p class="muted small">Gmail 링크로는 첨부파일을 자동으로 넣을 수 없어요. 창이 열리면 받은 서류를 직접 첨부해 주세요.</p>
+              </div>
+            </section>
+          </div>
+
+          <!-- 미리보기 -->
+          <div class="tool-preview">
+            <div class="preview-head">
+              <h3>미리보기</h3>
+              <span class="legend"><i class="lg-filled"></i>채운 칸 <i class="lg-slot"></i>찾은 칸</span>
+            </div>
+            <div class="paper preview-paper" id="preview">
+              <svg class="clip"><use href="#clip"/></svg>
+              <div class="preview-empty">
+                <p>양식을 올리면<br>여기에서 미리 볼 수 있어요.</p>
+              </div>
+            </div>
+            <p class="muted small">미리보기는 모양을 대략 보여 줘요. 실제 모양은 받은 파일을 한글에서 열어 확인해 주세요.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. 회의록 정리 -->
+    <section class="section section-tint" id="minutes">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">회의록 정리</p>
+          <h2>쭉 쓴 회의 내용이 보고서가 돼요</h2>
+          <p>말하듯 편하게 적으면 <b>회의 개요 · 논의 내용 · 결정 사항 · 할 일 · 이슈</b>로 나누고, "~했어요"는 "~함"처럼 보고서 문구로 바꿔요. AI 없이 이 브라우저 안에서만 정리해서 비용이 들지 않아요.</p>
+        </div>
+
+        <div class="tool">
+          <div class="tool-steps">
+            <!-- ① 회의 내용 -->
+            <section class="card" aria-labelledby="m1">
+              <h3 id="m1"><span class="num">1</span>회의 내용 쓰기</h3>
+              <label class="field">회의 내용 <span class="muted small">— 한 줄에 한 가지씩 쓰면 더 잘 나눠져요</span>
+                <textarea id="m-text" rows="11" placeholder="예)&#10;10월 12일 강사 운영 회의&#10;참석: 김팀장, 이매니저, 홍길동 강사&#10;교재는 김팀장님이 10월 15일까지 공유해 주시기로 함&#10;다음 기수부터 실습 시간을 30분 늘리기로 했어요"></textarea>
+              </label>
+              <div class="row-actions">
+                <button type="button" class="link-btn" id="m-sample">샘플 회의록 넣기</button>
+                <label class="link-btn file-link">파일 불러오기 (.txt · .docx)<input type="file" id="m-file" accept=".txt,.docx,text/plain" hidden></label>
+                <button type="button" class="link-btn danger" id="m-clear">지우기</button>
+              </div>
+              <p class="notice notice-error" id="m-error" hidden></p>
+            </section>
+
+            <!-- ② 회의 정보 -->
+            <section class="card" aria-labelledby="m2">
+              <h3 id="m2"><span class="num">2</span>회의 정보 <span class="muted small head-note">회의 내용에서 찾아 채워요</span></h3>
+              <div class="fields">
+                <label class="field span-2">회의명<input type="text" id="m-title" placeholder="예) 강사 운영 회의"></label>
+                <label class="field">일시<input type="text" id="m-date" placeholder="예) 2026. 10. 12.(월) 14:00"></label>
+                <label class="field">장소<input type="text" id="m-place" placeholder="예) 3층 회의실"></label>
+                <label class="field">참석자<input type="text" id="m-attendees" placeholder="예) 김팀장, 이매니저"></label>
+                <label class="field">작성자<input type="text" id="m-writer"></label>
+              </div>
+            </section>
+
+            <!-- ③ 정리 확인 -->
+            <section class="card" aria-labelledby="m3">
+              <h3 id="m3"><span class="num">3</span>정리 확인</h3>
+              <p class="muted" id="m-empty">회의 내용을 쓰면 문장마다 어디에 들어갈지 여기에 나와요.</p>
+              <ul class="m-items" id="m-items"></ul>
+            </section>
+
+            <!-- ④ 받기 -->
+            <section class="card" aria-labelledby="m4">
+              <h3 id="m4"><span class="num">4</span>받기</h3>
+              <div class="actions">
+                <button type="button" class="btn btn-primary" id="m-hwpx" disabled>한글 보고서 받기 (.hwpx)</button>
+                <button type="button" class="btn btn-ghost" id="m-pdf" disabled>PDF로 받기</button>
+                <button type="button" class="btn btn-ghost" id="m-xlsx" disabled>엑셀로 받기 (.xlsx)</button>
+                <button type="button" class="btn btn-ghost" id="m-copy" disabled>보고서 글 복사</button>
+              </div>
+              <p class="muted small" id="m-pdf-status"></p>
+            </section>
+          </div>
+
+          <!-- 미리보기 -->
+          <div class="tool-preview">
+            <div class="preview-head">
+              <h3>보고서 미리보기</h3>
+            </div>
+            <div class="paper preview-paper report-paper" id="m-preview">
+              <svg class="clip"><use href="#clip"/></svg>
+              <div class="preview-empty">
+                <p>회의 내용을 쓰면<br>여기에 보고서가 만들어져요.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. 자주 묻는 질문 -->
+    <section class="section" id="faq">
+      <div class="wrap narrow">
+        <div class="section-head">
+          <p class="eyebrow">자주 묻는 질문</p>
+          <h2>궁금한 점</h2>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>구형 한글 파일(.hwp)은 안 되나요?</summary>
+            <p>.hwp는 웹에서 바로 고칠 수 없는 형식이에요. 한글에서 <b>파일 → 다른 이름으로 저장하기 → 한글 표준 문서(*.hwpx)</b>로 한 번만 저장해서 올려 주세요.</p>
+          </details>
+          <details>
+            <summary>서명 사진이 어딘가에 저장되나요?</summary>
+            <p>회원 가입 없이 쓰는 서비스라, 서명은 <b>이 브라우저 안에만</b> 저장돼요. 다른 PC나 다른 브라우저에서는 서명을 한 번 더 올려 주세요. [PDF로 받기]를 누르면 서명이 들어간 서류가 변환 서버로 갔다가 변환이 끝나면 바로 지워져요.</p>
+          </details>
+          <details>
+            <summary>주민등록번호와 계좌번호는 어디에 저장되나요?</summary>
+            <p>양식을 채우는 데만 쓰고 서버로 보내지 않아요. 계좌번호는 다른 내 정보처럼 이 브라우저에 기억하고, 주민등록번호는 <b>'주민등록번호도 기억하기'를 켰을 때만</b> 저장해요. 공용 PC에서는 켜지 말고, 다 쓴 뒤 맨 아래 [저장된 정보 모두 지우기]를 눌러 주세요. 단, [PDF로 받기]를 누르면 채운 서류가 PDF 변환 서버를 거쳤다가 바로 지워져요.</p>
+          </details>
+          <details>
+            <summary>양식의 칸을 잘못 찾으면 어떻게 하나요?</summary>
+            <p>'칸 확인' 단계에서 칸마다 넣을 항목을 직접 고르거나 '넣지 않음'으로 바꿀 수 있어요. 표가 아닌 자유 형식 양식은 칸을 찾지 못할 수 있어요.</p>
+          </details>
+          <details>
+            <summary>Gmail에 첨부파일이 자동으로 들어가나요?</summary>
+            <p>아니요. Gmail 링크로는 첨부파일을 넣을 수 없어서, 받는 사람·제목·본문까지만 채워져요. 받은 서류는 직접 첨부해 주세요.</p>
+          </details>
+          <details>
+            <summary>회의록 정리는 AI가 하나요?</summary>
+            <p>아니요. 정해 둔 규칙으로 문장을 나누고 말투를 보고서 문구로 바꿔서 비용이 들지 않고, 회의 내용도 이 브라우저 밖으로 나가지 않아요([PDF로 받기]를 누를 때만 변환 서버를 거쳐요). 대신 자유롭게 쓴 문장은 잘못 나눌 수 있으니 '정리 확인'에서 고쳐 주세요.</p>
+          </details>
+          <details>
+            <summary>PDF로 받을 수 있나요?</summary>
+            <p>네. 변환 서버가 켜져 있으면 [PDF로 받기]를 눌러 바로 받을 수 있어요. 한글이 설치된 PC에서 돌리는 변환 서버는 한글로 직접 PDF를 만들어 원본과 같아요. 변환 서버가 꺼져 있으면 받은 .hwpx를 한글에서 <b>파일 → PDF로 저장하기</b>로 저장해 주세요.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <span class="logo"><img class="logo-img" src="assets/logo.webp" alt="" width="36" height="36">서류 깔끔정리</span>
+      <p>Nexus Career 생성형 AI 리터러시 교육 프로젝트</p>
+      <button type="button" class="link-btn" id="clear-all">이 브라우저에 저장된 정보 모두 지우기</button>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <script src="js/config.js"></script>
+  <script src="samples/sample-data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/signature.js"></script>
+  <script src="js/hwpx.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="samples/report-template.js"></script>
+  <script src="js/minutes.js"></script>
+  <script src="js/minutes-hwpx.js"></script>
+  <script src="js/demo.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/minutes-app.js"></script>
+</body>
+</html>
