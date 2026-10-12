@@ -10,7 +10,7 @@
 | 상태 | 1·2·3단계 개발 완료 (2026-10-12) |
 | 로고 | 단비(Danbi) — `assets/logo.webp` |
 | 기획서 | [PRD · AI 서류 깔끔정리](https://claude.ai/code/artifact/32a56b4b-0db6-477f-8181-0b9e8ba25074) |
-| **바로 쓰기** | **https://danbi2071.github.io/doc-clean/** (GitHub Pages, 링크만 있으면 누구나 사용) |
+| **바로 쓰기** | **https://danbi2071.github.io/** (GitHub Pages, 링크만 있으면 누구나 사용) |
 
 ---
 
@@ -18,7 +18,7 @@
 
 ### 인터넷에서 바로 쓰기
 
-**https://danbi2071.github.io/doc-clean/** — 설치 없이 링크로 열면 됩니다. 입력한 정보와 서명은 각자의 브라우저에만 저장됩니다.
+**https://danbi2071.github.io/** — 설치 없이 링크로 열면 됩니다. 입력한 정보와 서명은 각자의 브라우저에만 저장됩니다.
 이 주소에서는 PDF 자동 변환 서버에 닿지 않으므로 **[PDF로 받기]는 꺼지고** "한글에서 PDF로 저장" 안내가 나옵니다.
 
 **고친 내용을 사이트에 반영하기** (1~2분 뒤 같은 주소에 반영)
